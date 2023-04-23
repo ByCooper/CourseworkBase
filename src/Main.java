@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 public class Main {
@@ -25,19 +26,6 @@ public class Main {
         employees[8] = employee9;
         employees[9] = employee10;
 
-
-        System.out.println(Arrays.toString(employees));
-        System.out.println();
-        System.out.println("Ежемесячные расходы на зарплаты для сотрудников составляют " + Employee.allSalary(employees));
-        System.out.println();
-        Employee.minSalary(employees);
-        System.out.println();
-        Employee.maxSalary(employees);
-        System.out.println();
-        Employee.averageSalary(employees, Employee.allSalary(employees));
-        System.out.println();
-        Employee.allName(employees);
-        System.out.println();
 
     }
 }
