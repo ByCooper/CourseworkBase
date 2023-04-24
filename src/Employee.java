@@ -1,4 +1,5 @@
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 public class Employee {
 
@@ -17,17 +18,16 @@ public class Employee {
         this.office = office;
         this.salary = salary;
         id = ++count;
-
     }
 
     @Override
     public String toString() {
-        return '\n' + "Сотрудник" + '\n' + "id = " + id + '\n' +
-                "Фамилия ='" + this.middleName + '\'' + '\n' +
-                "Имя ='" + this.firstName + '\'' + '\n' +
-                "Отчество ='" + this.lastName + '\'' + '\n' +
-                "Отдел = " + this.office + '\n' +
-                "Зарплата = " + this.salary + '\n';
+            return '\n' + "Сотрудник" + '\n' + "id = " + id + '\n' +
+                    "Фамилия ='" + this.middleName + '\'' + '\n' +
+                    "Имя ='" + this.firstName + '\'' + '\n' +
+                    "Отчество ='" + this.lastName + '\'' + '\n' +
+                    "Отдел = " + this.office + '\n' +
+                    "Зарплата = " + this.salary + '\n';
     }
 
     public void setOffice(int office) {

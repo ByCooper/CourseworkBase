@@ -18,7 +18,7 @@ public class Main {
         employees[0] = employee1;
         employees[1] = employee2;
         employees[2] = employee3;
-        employees[3] = employee4;
+        //employees[3] = employee4;
         employees[4] = employee5;
         employees[5] = employee6;
         employees[6] = employee7;
@@ -27,5 +27,72 @@ public class Main {
         employees[9] = employee10;
 
 
+        System.out.println(Arrays.toString(employees));
+        System.out.println();
+        System.out.println("Ежемесячные расходы на зарплаты для сотрудников составляют " + allSalary(employees));
+        System.out.println();
+        minSalary(employees);
+        System.out.println();
+        maxSalary(employees);
+        System.out.println();
+        averageSalary(employees, allSalary(employees));
+        System.out.println();
+        allName(employees);
+        System.out.println();
+
+    }
+
+    private static int allSalary(Employee[] o) {
+        int sum = 0;
+        int a = 0;
+        for (int i = 0; i <= o.length - 1; i++) {
+            if (o[i] != null)
+                a = o[i].getSalary();
+            sum = sum + a;
+        }
+        return sum;
+    }
+
+    private static void minSalary(Employee[] o) {
+        int min = o[0].getSalary();
+        Employee unitMin = o[0];
+        for (int i = 0; i <= o.length - 1; i++) {
+            if (o[i] != null) {
+                if (min > o[i].getSalary()) {
+                    min = o[i].getSalary();
+                    unitMin = o[i];
+                }
+            }
+        }
+        System.out.println("Минимальная зарплата по организации: " + "\n" + unitMin);
+    }
+
+    private static void maxSalary(Employee[] o) {
+        int max = o[0].getSalary();
+        Employee unitMax = o[0];
+        for (int i = 0; i <= o.length - 1; i++) {
+            if (o[i] != null) {
+                if (max < o[i].getSalary()) {
+                    max = o[i].getSalary();
+                    unitMax = o[i];
+                }
+            }
+        }
+        System.out.println("Максимальная зарплата по организации: " + "\n" + unitMax);
+    }
+
+    private static void averageSalary(Employee[] o, int i) {
+
+        double average = (double) i / o.length;
+        System.out.println("Среднее занчение зарплат равно " + new DecimalFormat("###,###.##").format(average));
+    }
+
+
+    private static void allName(Employee[] o) {
+        for (int i = 0; i <= o.length - 1; i++) {
+            if (o[i] != null) {
+                System.out.println(o[i].getMiddleName() + " " + o[i].getFirstName() + " " + o[i].getLastName());
+            }
+        }
     }
 }
