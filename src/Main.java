@@ -18,7 +18,7 @@ public class Main {
         employees[0] = employee1;
         employees[1] = employee2;
         employees[2] = employee3;
-        employees[3] = employee4;
+        //employees[3] = employee4;
         employees[4] = employee5;
         employees[5] = employee6;
         employees[6] = employee7;
@@ -46,7 +46,8 @@ public class Main {
         int sum = 0;
         int a = 0;
         for (int i = 0; i <= o.length - 1; i++) {
-            a = o[i].getSalary();
+            if (o[i] != null)
+                a = o[i].getSalary();
             sum = sum + a;
         }
         return sum;
@@ -56,9 +57,11 @@ public class Main {
         int min = o[0].getSalary();
         Employee unitMin = o[0];
         for (int i = 0; i <= o.length - 1; i++) {
-            if (min > o[i].getSalary()) {
-                min = o[i].getSalary();
-                unitMin = o[i];
+            if (o[i] != null) {
+                if (min > o[i].getSalary()) {
+                    min = o[i].getSalary();
+                    unitMin = o[i];
+                }
             }
         }
         System.out.println("Минимальная зарплата по организации: " + "\n" + unitMin);
@@ -68,22 +71,28 @@ public class Main {
         int max = o[0].getSalary();
         Employee unitMax = o[0];
         for (int i = 0; i <= o.length - 1; i++) {
-            if (max < o[i].getSalary()) {
-                max = o[i].getSalary();
-                unitMax = o[i];
+            if (o[i] != null) {
+                if (max < o[i].getSalary()) {
+                    max = o[i].getSalary();
+                    unitMax = o[i];
+                }
             }
         }
         System.out.println("Максимальная зарплата по организации: " + "\n" + unitMax);
     }
 
     private static void averageSalary(Employee[] o, int i) {
+
         double average = (double) i / o.length;
         System.out.println("Среднее занчение зарплат равно " + new DecimalFormat("###,###.##").format(average));
     }
 
+
     private static void allName(Employee[] o) {
         for (int i = 0; i <= o.length - 1; i++) {
-            System.out.println(o[i].getMiddleName() + " " + o[i].getFirstName() + " " + o[i].getLastName());
+            if (o[i] != null) {
+                System.out.println(o[i].getMiddleName() + " " + o[i].getFirstName() + " " + o[i].getLastName());
+            }
         }
     }
 }
