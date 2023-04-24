@@ -46,8 +46,7 @@ public class Main {
         int sum = 0;
         int a = 0;
         for (int i = 0; i <= o.length - 1; i++) {
-            if (o[i] != null)
-                a = o[i].getSalary();
+            a = o[i].getSalary();
             sum = sum + a;
         }
         return sum;
@@ -57,11 +56,9 @@ public class Main {
         int min = o[0].getSalary();
         Employee unitMin = o[0];
         for (int i = 0; i <= o.length - 1; i++) {
-            if (o[i] != null) {
-                if (min > o[i].getSalary()) {
-                    min = o[i].getSalary();
-                    unitMin = o[i];
-                }
+            if (min > o[i].getSalary()) {
+                min = o[i].getSalary();
+                unitMin = o[i];
             }
         }
         System.out.println("Минимальная зарплата по организации: " + "\n" + unitMin);
@@ -71,11 +68,9 @@ public class Main {
         int max = o[0].getSalary();
         Employee unitMax = o[0];
         for (int i = 0; i <= o.length - 1; i++) {
-            if (o[i] != null) {
-                if (max < o[i].getSalary()) {
-                    max = o[i].getSalary();
-                    unitMax = o[i];
-                }
+            if (max < o[i].getSalary()) {
+                max = o[i].getSalary();
+                unitMax = o[i];
             }
         }
         System.out.println("Максимальная зарплата по организации: " + "\n" + unitMax);
@@ -90,9 +85,7 @@ public class Main {
 
     private static void allName(Employee[] o) {
         for (int i = 0; i <= o.length - 1; i++) {
-            if (o[i] != null) {
                 System.out.println(o[i].getMiddleName() + " " + o[i].getFirstName() + " " + o[i].getLastName());
-            }
         }
     }
 }
